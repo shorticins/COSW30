@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Source Code Pro', monospace; 
-            color: darkgray;
+            color: navy;
             background-color: lightblue;
             text-align: center;
         }
@@ -37,6 +37,16 @@
             text-decoration: none;
             width: 50%;
             margin: auto;
+        }
+        li{
+            text-decoration:none;
+        }
+        a{
+            color: maroon;
+            }
+        a:hover {
+            background-color: maroon;
+            color: white;
         }
         </style>
         
@@ -66,8 +76,9 @@
         </ul>
         
         <?php
-        echo 'Two of my favorite websites are <a href="https://www.facebook.com">Facebook</a> and <a href="https://www.amazon.com">Amazon</a>';
-        echo 'This assignment was pretty challenging for me because I am not familiar with php syntax yet, but I am hopeful that I will pick up on it better as the course progresses.';
+        echo '<p align=center>Two of my favorite websites are <a href="https://www.facebook.com">Facebook</a> and <a href="https://www.amazon.com">Amazon</a></p>.<br/>';
+        echo '<p align=center>This assignment was pretty challenging for me because I am not familiar with php syntax yet,</p><br/>';
+        echo '<p align=center>but I am hopeful that I will pick up on it better as the course progresses.</p>';
         ?>
     </body>
     
