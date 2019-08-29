@@ -66,7 +66,7 @@
         </header>
         
         <h2>About Me</h2>
-        <p>Visit my <a href="https://github.com/shorticins">Github</a> profile</p>
+        <p>Visit my <a href="https://github.com/shorticins">Github</a> profile</p><br>
         <p>My name is Shanen Dibbern and I am a student at Long Beach City College. I also write on a contract basis and I have started helping people to create and maintain websites. I am looking forward to working for a company in addition to continuing contract work. When I'm not working on projects I enjoy spending time with friends. Some other things I like to do are listed below.</p>
         <br>
         <ul>
