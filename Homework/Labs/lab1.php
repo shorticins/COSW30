@@ -39,7 +39,7 @@
             margin: auto;
         }
         li{
-            text-decoration:none;
+            list-style: none;
         }
         a{
             color: maroon;
@@ -67,6 +67,7 @@
         
         <h2>About Me</h2>
         <p>My name is Shanen Dibbern and I am a student at Long Beach City College. I also write on a contract basis and I have started helping people to create and maintain websites. I am looking forward to working for a company in addition to continuing contract work. When I'm not working on projects I enjoy spending time with friends. Some other things I like to do are listed below.</p>
+        <br>
         <ul>
             <li>Play billiards</li>
             <li>Watch movies(mostly documentaries)</li>
@@ -74,7 +75,7 @@
             <li>Paint, sketch, and use pastels to be creative</li>
             <li>Write</li>
         </ul>
-        
+        <br>
         <?php
         echo '<p align=center>Two of my favorite websites are <a href="https://www.facebook.com">Facebook</a> and <a href="https://www.amazon.com">Amazon</a></p>.<br/>';
         echo '<p align=center>This assignment was pretty challenging for me because I am not familiar with php syntax yet,</p><br/>';
