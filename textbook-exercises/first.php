@@ -21,7 +21,7 @@
  
  echo "<p>You are running the file <br> <strong>$file</strong></p>\n";
  echo "<p>You are viewing the page using <br><strong>$user</strong></p>\n";
- echo "<p>This server is running <br><strong>$server</strong></p>\n"
+ echo "<p>This server is running <br><strong>$server</strong></p>\n";
 
  echo "This was generated using PHP";
 ?>
