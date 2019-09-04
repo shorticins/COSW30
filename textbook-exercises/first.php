@@ -15,9 +15,9 @@
  
  echo 'Some PHP predefined variables';
  
- $file = $_server['SCRIPT_FILENAME'];
- $user = $_server['HTTP_USER_AGENT'];
- $server = $_server['SERVER_SOFTWARE'];
+ $file = $_SERVER['SCRIPT_FILENAME'];
+ $user = $_SERVER['HTTP_USER_AGENT'];
+ $server = $_SERVER['SERVER_SOFTWARE'];
  
  echo "<p>You are running the file <br> <strong>$file</strong></p>\n";
  echo "<p>You are viewing the page using <br><strong>$user</strong></p>\n";
