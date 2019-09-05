@@ -14,8 +14,6 @@
             echo "Thank you for registering! We will contact you at $email as soon as possible!";
         }
         
-    } elseif ($password !== $confirm_password) {
-        echo 'Your registration is incomplete, please try again';
     } else {
         echo "Error";
     }

@@ -7,7 +7,9 @@
     </head>
     <body>
         
-        <h1>Please fill out the registration form</h1>
+        <header>
+            <h1>Please fill out the registration form</h1>
+        </header>
         
         <h2>Registration Form</h2>
         
@@ -38,6 +40,10 @@
             <p><button>Register!</button></p>
             
         </form>
+        
+        <footer>
+            <p><center>2019 COSW30 Lab 2 - Shanen and Ona</center></p>
+        </footer>
  
     </body>
     
