@@ -1,0 +1,129 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mighty Mouse 2020</title>
+        <link rel="stylesheet" href="mighty_support.css" type="text/css">
+        </head>
+    
+    <body>
+        <header>
+<h1 id="title">Mighty Mouse 2020</h1>
+</header>
+<h2>Supporter Form</h2>
+<div id="form-outer">
+  <p id="description">
+    Your Information
+  </p>
+  <form id="survey-form" method="POST" action="process_campaignsupport.php">
+    <!-- first name -->
+    <div class="rowTab">
+      <div class="labels">
+        <label class="name-label" for="first_name">* First Name: </label>
+      </div>
+      <div class="rightTab">
+        <input type="text" name="first_name" id="first_name" class="input-field" placeholder="Enter your first name" required>
+      </div>
+    </div>
+    <!--last name-->
+    <div class="labels">
+      <label class="name-label" for="last_name">* Last Name: </label>
+      </div>
+      <div class="rightTab">
+        <input type="text" name="last_name" id="last_name" class="input-field" placeholder="Enter your last name" required>
+       </div>
+    <!--email-->
+    <div class="rowTab">
+      <div class="labels">
+        <label id="email-label" for="email">* Email: </label>
+      </div>
+      <div class="rightTab">
+        <input type="email" name="email" id="email" class="input-field" placeholder="Enter your Email" required>
+      </div>
+    </div>
+   <!--age-->
+   <div class="rowTab">
+      <div class="labels">
+        <label for="age_range">* Age Range:</label>
+      </div>
+      
+      <div class="rightTab">
+        <select id="dropdown" name="age_range" class="dropdown" required>
+      <option disabled selected value> Select One</option>
+      <option value="18-30">18-30</option>
+      <option value="31-50">31-50</option>
+      <option value="50+">50+</option>
+    </select>
+      </div>
+    </div>
+    <!--gender-->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="gender">* Gender</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="gender" class="dropdown" required>
+      <option disabled selected value> Select One</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+      </div>
+    </div>
+    <!--interests-->
+     <div class="rowTab">
+      <div class="labels">
+        <label for="interests">What are your interests?<br>(Check all that apply) </label>
+      </div>
+      <div class="rightTab">
+        <ul id="interests" style="list-style: none;">
+          <li class="checkbox"><label><input name="interest[]" value="taxes" type="checkbox" class="interests">Federal Tax Reform</label></li>
+          <li class="checkbox"><input name="interest[]" value="social security" type="checkbox" class="interests">Social Security</li>
+          <li class="checkbox"><label><input name="interest[]" value="climate change" type="checkbox" class="interests">Climate Change</label></li>
+          <li class="checkbox"><label><input name="interest[]" value="crime reduction" type="checkbox" class="interests">Crime Reduction</label></li>
+          <li class="checkbox"><label><input name="interest[]" value="mouse and cat relations" type="checkbox" class="interests">Mouse and Cat Relations</label></li>
+          <li class="checkbox"><label><input name="interest[]" value="foreign relations" type="checkbox" class="interests">Foreign Relations</label></li> 
+        </ul>
+      </div>
+    </div>
+    <!--contribution-->
+ <div class="rowTab">
+      <div class="labels">
+        <label id="contribution" for="contribution">Contribution: </label>
+      </div>
+      <div class="rightTab">
+        <input type="text" name="contribution" id="contribution" class="input-field" placeholder="Enter Amount">
+      </div>
+    </div>
+    <!--mailing list-->
+<div class="rowTab">
+<div class="labels">
+  <label for="email_list" id="email_list">Check the box to join our mailing list. Otherwise you could miss out on important updates.</label>
+  <input name="email_list" value="1" type="checkbox" id="email" checked>
+  </div>
+  </div>
+  <!--comments-->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="comments">Any Comments or Suggestions?</label>
+      </div>
+
+      <div class="rightTab">
+        <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment here..."></textarea>
+      </div>
+    </div>
+    <!--submit button-->
+    <button id="submit" type="submit">Submit</button>
+  </form>
+</div>
+<footer>
+  <p>&copy2019 Shanen Dibbern</p>
+</footer>
+        
+    </body>
+    
+    
+    
+    
+</html>
