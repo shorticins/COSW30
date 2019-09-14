@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+html,
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  min-width: 320px;
+}
+
+header {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px;
+  color: white;
+  text-shadow: 3px 2px 3px red;
+  background-color: black;
+  padding: 65px 0;
+  margin: 0;
+}
+h1{
+  padding: 25px 0;
+}
+h2{
+  color: black;
+}
+
+.labels {
+  display: inline-block;
+  text-align: right;
+  width: 40%;
+  padding: 5px;
+  vertical-align: top;
+  margin-top: 10px;
+}
+
+.rightTab {
+  display: inline-block;
+  text-align: left;
+  width: 38%;
+  vertical-align: middle;
+}
+
+#submit {
+  background-color: red;
+  border-radius: 4px;
+  color: white;
+  font-size: 1em;
+  height: 40px;
+  width: 96px;
+  margin: 35px;
+  border: 0px solid;
+  }
+
+.dropdown {
+  height: 35px;
+  width: 140px;
+  padding: 5px;
+  margin: 10px;  
+  margin-top: 15px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+
+
+footer{
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 15px;
+  margin-top: 25px;
+}
+@media screen and (max-width: 833px) {
+  select {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  
+  .labels {
+    width: 100%;
+    text-align: left;
+  }
+  .rightTab {
+    width: 80%;
+    float: left;
+  }
+  select {
+    width: 100%;
+  }
+}
+

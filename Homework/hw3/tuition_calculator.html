@@ -1,0 +1,114 @@
+<!Doctype html>
+<html lang-"en">
+    <head>
+    <title>LBCC Tuition Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tuition_styles.css">
+    </head>
+    
+    <body>
+       <header>
+  <img src="lbcc_logo.png" alt="Long Beach City College logo">
+</header>
+
+<h1>LBCC Tuition Calculator</h1>
+
+  <p id="description">
+    Complete this form to calculate the cost of your tuition.
+  </p>
+
+  <form id="survey-form" method="POST" action="process_tuition.php">
+   
+   <!--resident status-->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="resident">* Are you a California resident?</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="resident" class="dropdown" required>
+      <option disabled> Select One</option>
+      <option value="46">Yes</option>
+      <option value="265">No</option>
+    </select>
+      </div>
+    </div>
+<!--end resident status-->
+    
+    <!--Get number of Units-->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="units">* Number of Units</label>
+      </div>
+      <div class="rightTab">
+      <select id="dropdown" name="units" class="dropdown" required>
+      <option disabled>select one</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+      <option value="16">16</option>
+      <option value="17">17</option>
+      <option value="18">18</option>
+      <option value="19">19</option>
+      <option value="20">20</option>
+      <option value="21">21</option>
+</select>
+        </div>
+    </div>
+    <!--end number of units-->
+    
+ <p>There is a <strong>mandatory</strong> student HEALTH FEE of <strong>$19</strong> for all registered students.</p>
+    
+    <p><strong> Optional Fees: </strong></p>
+    
+    <!--college services card-->
+    <div class="rowTab">
+      <div class="labels">
+        <label for="card">College Services Card ?</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="card" class="dropdown">
+      <option disabled> Select One</option>
+      <option value="0">No[$0]</option>
+      <option value="20">Yes[$20]</option>
+    </select>
+      </div>
+    </div>
+    <!--end college services card-->
+    
+    <!--parking permit-->
+    
+    <div class="rowTab">
+      <div class="labels">
+        <label for="parking">Parking Permit ?</label>
+      </div>
+      <div class="rightTab">
+        <select id="dropdown" name="parking" class="dropdown">
+      <option disabled> Select One</option>
+      <option value="0">No[$0]</option>
+      <option value="30">Yes[$30]</option>
+    </select>
+      </div>
+      </div>
+
+<button id="submit">Submit</button>
+    </form>
+</div>
+<footer>
+  <p><strong>&copy2019 Shanen Dibbern</strong></p>
+</footer>
+    </body>
+
+</html>
