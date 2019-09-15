@@ -28,7 +28,7 @@
      $parking = $_POST['parking'];
      $total_unit_cost = $resident * $units;
      $total_registration = ($total_unit_cost + 19 + $card + $parking);
-     $scholarship_amt = rand(0, 350);
+     $scholarship_amt = rand(0, $total_registration);
      $balance_due = $total_registration - $scholarship_amt;
       
        if (!empty($resident) && !empty($units)){
