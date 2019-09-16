@@ -27,14 +27,14 @@
      $card = $_POST['card'];
      $parking = $_POST['parking'];
      $total_unit_cost = $resident * $units;
-     $total_registration = ($total_unit_cost + 19 + $card + $parking);
+     $total_registration = ($total_unit_cost + 20 + $card + $parking);
      $scholarship_amt = rand(0, $total_registration);
      $balance_due = $total_registration - $scholarship_amt;
       
        if (!empty($resident) && !empty($units)){
         echo "<h2><strong>Basic Cost</strong></h2>";
         echo "<p>Tuition Cost: $units x $$resident = $$total_unit_cost </p>";
-        echo "<p>Student Health Fee:" . " $" . "19" . "</p>";
+        echo "<p>Student Health Fee:" . " $" . "20" . "</p>";
         echo "<p>College Services Card: $$card</p>";
         echo "<p>Parking Permit: $$parking </p>";
         echo "<p>Total registration cost: $$total_registration<p>";
