@@ -23,6 +23,12 @@
                 font-family: 'Turret Road', cursive;
                 font-size: 50px;
             }
+            #tables {
+                display: block;
+                padding: 5px;
+                width: 200px;
+                margin: auto;
+            }
         </style>
         
     </head>
@@ -71,9 +77,13 @@ if(!empty($quote)) {
    foreach($quote_explode as $key => $value){
        echo "<p>$value</p>";
    }
-   echo "br";
+   echo "<br>";
+   
+   
    //add words to array
-   "<h2>Your list with three words added is:</h2>";
+   
+   echo "<h2>Your list with three words added is:</h2>";
+   $quote_explode = explode(' ', $quote);
   $quote_explode[] = "Because";
   $quote_explode[] = "I'm";
   $quote_explode[] = "Cool";
@@ -82,8 +92,24 @@ if(!empty($quote)) {
       echo "<p>$value</p>";
   }
   
-  echo "<p>Your new total word count is:</p>";
+  echo "<p><strong>Your new total word count is:<strong></p>";
   echo "<p>" . count($quote_explode) . "</p>";
+  
+  echo "<br>";
+  
+  $removed_index = array_slice($quote_explode, 3);
+  
+  echo "<h2>Your list after removing the first 3 items is:</h2>";
+  
+  foreach($removed_index as $key => $value){
+      echo "<p>$value</p>";
+  }
+  
+  echo "<p><strong>Your word count is now:</strong></p>";
+  
+  echo count($removed_index);
+  
+  echo "<br>";
   
 }
     
@@ -101,5 +127,10 @@ if(!empty($quote)) {
 
 
 ?>
+<p>Return to <a href="quote.html">form</a></p>
+<p>~OR~</p>
+<form action="population.php" method="POST">
+<button id="tables" type="submit">Go to Array Tables</button>
+</form>
 </body>
 </html>

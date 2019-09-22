@@ -25,13 +25,24 @@
                 font-size: 25px;
             }
             
-            button{
+            #submit{
                 padding: 5px;
                 width: 75px;
                 margin: auto;
             }
             input {
                 width: 350px;
+            }
+            #or{
+                display: block;
+                width: 200px;
+                margin: 10px auto;
+            }
+            #tables {
+                display: block;
+                padding: 5px;
+                width: 200px;
+                margin: 10px auto;
             }
         </style>
         
@@ -44,11 +55,15 @@
         <form action="process_quote.php" method="POST">
             <label for="">Please enter 5 or more words, each word separated by a space.</label>
               <input id="text" type="text" name="text">
-            <button type="submit">Submit</button>
+            <button id="submit type="submit">Submit</button>
         </form>  
-        
-        
-        
+        <hr>
+        <br>
+        <p id="or">~OR~</p>
+        <br>
+        <form action="population.php" method="POST">
+        <button id="tables" type="submit">Go to array tables</button>
+        </form>
         
     </body>
     
