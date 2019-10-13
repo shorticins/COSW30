@@ -61,10 +61,7 @@ input[type="checkbox"] {
   float: left;
   margin-right: 5px;
 }
-#email {
 
-  margin-right: 5px;
-}
 #submit {
   background-color: #e34a1b;
   border-radius: 4px;
