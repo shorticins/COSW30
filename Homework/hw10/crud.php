@@ -10,19 +10,36 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $last_name  = $_POST['last_name'];
     $email      = $_POST['email'];
     $password   = $_POST['password'];
+    $password_confirm = $_POST['password_conf'];
 
-    $insert_query = "INSERT INTO USER_DIBBERN (first_name, last_name, email, password)
+ // Check if variables are empty
+    // If they are not empty run this code
+
+    if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($password) && !empty($password_confirm) && $password_confirm == $password){
+
+    $insert_query = "INSERT INTO USER_DIBBERN (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD)
                     VALUES ('$first_name', '$last_name', '$email', '$password')";
 
     $result = mysqli_query($connection, $insert_query);
-
-    if($result && !empty($first_name) && !empty($last_name) && !empty($email) && !empty($password)) {
-        echo 'New user added to the database';
-    } else {
-        echo 'Error entering new user';
     }
+    else {
+        echo "Something went wrong. Try again.";
+    }
+
+     if($result){
+        echo "<p>New user added to the database</p><br>";
+    }
+    else{
+        echo "<p>Please enter new user information.</p></br>";
 }
 
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "<p>Please enter a valid email address.</p>";
+    }
+
+    if($password !== $password_confirm){
+        echo "Passwords must match";
+    }
 
 /*
 *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
@@ -39,44 +56,90 @@ if($result) {
     //print_r($rows);
 } else {
     // Output an error
-    echo 'Error';
+    echo "<p>Error</p>";
 }
-
+}
 ?>
 
 <!doctype html>
 <html>
 <head>
     <title>I Like CRUD</title>
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+     body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  min-width: 320px;
+}
+
+.rowTab{
+    padding: 10px 0;
+}
+table {
+    width: 38%;
+    margin: auto;
+}
+    </style>
 </head>
 <body>
     <h1>Create a New User</h1>
+
     <form action="crud.php" method="POST">
-        <label for="first_name">First Name</label>
+
+    <div class="rowTab">
+      <div class="labels">
+        <label for="first_name">*First Name</label>
+      </div>
+      <div class="rightTab">
         <input type="text" id="first_name" name="first_name"><br>
+      </div>
+      </div>
 
-        <label for="last_name">Last Name</label>
+        <div class="rowTab">
+      <div class="labels">
+        <label for="last_name">*Last Name</label>
+      </div>
+      <div class="rightTab">
         <input type="text" id="last_name" name="last_name"><br>
+      </div>
+      </div>
 
-        <label for="email">Email</label>
+      <div class="rowTab">
+      <div class="labels">
+        <label for="email">*Email</label>
+      </div>
+      <div class="rightTab">
         <input type="email" id="email" name="email"><br>
+      </div>
+      </div>
 
-        <label for="password">Password</label>
+      <div class="rowTab">
+      <div class="labels">
+        <label for="password">*Password</label>
+      </div>
+      <div class="rightTab">
         <input type="password" id="password" name="password"><br>
-        <label for="password-conf">Confirm Password</label>
-        <input type="password" id="password_conf" name="password-conf">
+      </div>
+      </div>
+
+      <div class="rowTab">
+      <div class="labels">
+        <label for="password_conf">*Confirm Password</label>
+      </div>
+      <div class="rightTab">
+        <input type="password" id="password_conf" name="password_conf"><br>
+      </div>
+      </div>
+
 <button>Register</button>
     </form>
-<?php
-$password = $_POST['password'];
-$password_confirm = $_POST['password-conf'];
-        if($password !== $password_confirm) {
-            echo "passwords must match.";
-        }
-?>
 
 <h2>List of Users</h2>
-    <table>
+    <table border=1>
         <thead>
             <tr>
                 <th>First Name</th>
@@ -89,11 +152,12 @@ $password_confirm = $_POST['password-conf'];
 <?php
 
  foreach($rows as $row) {
+     //print_r($row);
         echo '<tr>
-                <td>'.$row['first_name'].'</td>
-                <td>'.$row['last_name'].'</td>
-                <td>'.$row['email'].'</td>
-                <td>'.$row['password'].'</td>
+                <td>'.$row['FIRST_NAME'].'</td>
+                <td>'.$row['LAST_NAME'].'</td>
+                <td>'.$row['EMAIL'].'</td>
+                <td>'.$row['PASSWORD'].'</td>
               </tr>';
         }
 
