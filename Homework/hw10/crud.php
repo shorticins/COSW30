@@ -21,12 +21,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     VALUES ('$first_name', '$last_name', '$email', '$password')";
 
     $result = mysqli_query($connection, $insert_query);
-    }
-    else {
+
+// Check if the database returned anything
+if($result) {
+    $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    //print_r($rows);
+}
+ else {
         echo "Something went wrong. Try again.";
     }
+}
 
-     if($result){
+   if($result){
         echo "<p>New user added to the database</p><br>";
     }
     else{
@@ -40,6 +46,7 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     if($password !== $password_confirm){
         echo "Passwords must match";
     }
+}
 
 /*
 *   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
@@ -58,32 +65,14 @@ if($result) {
     // Output an error
     echo "<p>Error</p>";
 }
-}
+
 ?>
 
 <!doctype html>
 <html>
 <head>
     <title>I Like CRUD</title>
-    <style>
-    @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-
-     body {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  font-family: 'Raleway', Helvetica, sans-serif;
-  min-width: 320px;
-}
-
-.rowTab{
-    padding: 10px 0;
-}
-table {
-    width: 38%;
-    margin: auto;
-}
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Create a New User</h1>
@@ -139,13 +128,14 @@ table {
     </form>
 
 <h2>List of Users</h2>
-    <table border=1>
+    <table>
         <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Password</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
@@ -158,6 +148,7 @@ table {
                 <td>'.$row['LAST_NAME'].'</td>
                 <td>'.$row['EMAIL'].'</td>
                 <td>'.$row['PASSWORD'].'</td>
+                <td><a href="update.php?id= '.$row['user_id'].'">edit</a></td>
               </tr>';
         }
 
