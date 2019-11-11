@@ -8,7 +8,8 @@ include('database.php');
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
     //echo $id;
-} else {
+} 
+else {
     // redirect to crud.php
     header('Location: crud.php');
     exit;
@@ -28,7 +29,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(empty($first_name) || empty($last_name) || empty($email) ||
         empty($password)) {
         echo '<p class="error">Error! One or more fields were left empty.</p>';
-    } else {
+    } 
+    else {
         // If they aren't empty, create and run your query
         //WHERE condition is user id = $_GET id
         // single quotes needed for SQL for strings only!
@@ -44,7 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<p class="success">User has been updated</p>';
             header('Location: crud.php');
             exit;
-        } else {
+        } 
+        else {
             echo '<p class="error">Error updating user</p>';
         }
     }
@@ -68,9 +71,13 @@ if($result) {
     $last_name  = $user['last_name'];
     $email      = $user['email'];
     $password   = $user['password'];
-} else {
+} 
+  else {
     echo "<p class=\"error\">Could not access database.</p>";
 }
+ 
+
+
 
 ?>
 
@@ -78,6 +85,7 @@ if($result) {
 <html>
 <head>
     <title>Update User Information</title>
+      <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Update User</h1>
@@ -97,7 +105,6 @@ if($result) {
          <!-- <input type="hidden" name="user_id" value="<?php echo $id; ?>"> !-->
 
         <button <a href="crud.php">Update User</button>
-        <button name="delete">Delete User</button>
     </form>
 </body>
 </html>

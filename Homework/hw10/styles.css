@@ -16,3 +16,7 @@ table {
     width: 38%;
     margin: auto;
 }
+.error {
+    font-size: 14px;
+    color: red;
+}

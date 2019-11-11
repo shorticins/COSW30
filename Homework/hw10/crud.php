@@ -129,7 +129,7 @@ if($result) {
     </form>
 
 <h2>List of Users</h2>
-    <table>
+    <table border=1>
         <thead>
             <tr>
                 <th>First Name</th>
