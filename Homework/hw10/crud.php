@@ -1,3 +1,4 @@
+
 <?php
 // Add the database connection
 include('database.php');
@@ -48,9 +49,9 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     }
 }
 
-/*
-*   QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
-*/
+
+//QUERY THE DATABASE AND STORE ALL USERS INTO A VARIABLE
+
 // Create your query
 $query = 'SELECT * FROM USER_DIBBERN';
 
