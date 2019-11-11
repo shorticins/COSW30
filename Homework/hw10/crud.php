@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if(!empty($first_name) && !empty($last_name) && !empty($email) && !empty($password) && !empty($password_confirm) && $password_confirm == $password){
 
-    $insert_query = "INSERT INTO USER_DIBBERN (FIRST_NAME, LAST_NAME, EMAIL, PASSWORD)
+    $insert_query = "INSERT INTO USER_DIBBERN (first_name, last_name, email, password)
                     VALUES ('$first_name', '$last_name', '$email', '$password')";
 
     $result = mysqli_query($connection, $insert_query);
@@ -145,10 +145,10 @@ if($result) {
  foreach($rows as $row) {
      //print_r($row);
         echo '<tr>
-                <td>'.$row['FIRST_NAME'].'</td>
-                <td>'.$row['LAST_NAME'].'</td>
-                <td>'.$row['EMAIL'].'</td>
-                <td>'.$row['PASSWORD'].'</td>
+                <td>'.$row['first_name'].'</td>
+                <td>'.$row['last_name'].'</td>
+                <td>'.$row['email'].'</td>
+                <td>'.$row['password'].'</td>
                 <td><a href="update.php?id= '.$row['user_id'].'">edit</a></td>
               </tr>';
         }

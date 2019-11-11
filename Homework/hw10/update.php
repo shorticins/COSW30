@@ -33,13 +33,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         //WHERE condition is user id = $_GET id
         // single quotes needed for SQL for strings only!
         $update_query = "UPDATE USER_DIBBERN
-                         SET FIRST_NAME = '$first_name',
-                             LAST_NAME = '$last_name',
-                             EMAIL = '$email',
-                             PASSWORD = '$password'
+                         SET first_name = '$first_name',
+                            last_name = '$last_name',
+                             email = '$email',
+                             password = '$password'
                         WHERE user_id = $id";
         $result = mysqli_query($connection, $update_query);
-
+    }
         if($result) {
             echo '<p class="success">User has been updated</p>';
             header('Location: crud.php');
@@ -48,26 +48,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<p class="error">Error updating user</p>';
         }
     }
-}
+
 /*
 *   QUERY THE DATABASE FOR THE USER THAT HAS THE GET ID
 */
 // Create your query
-//$id = $_GET['id']
+$id = $_GET['id'];
 $query = "SELECT * FROM USER_DIBBERN WHERE user_id = $id";
 // Run your query
 $result = mysqli_query($connection, $query);
-// Check if the database returned anything
+PRINT_R($RESULT);
 if($result) {
     // If the database query was successful, store
     // the users information into a variable
     //assoc() gathers a single row
     $user = mysqli_fetch_assoc($result);
     //print_r($user);
-    $first_name = $user['FIRST_NAME'];
-    $last_name  = $user['LAST_NAME'];
-    $email      = $user['EMAIL'];
-    $password   = $user['PASSWORD'];
+    $first_name = $user['first_name'];
+    $last_name  = $user['last_name'];
+    $email      = $user['email'];
+    $password   = $user['password'];
 } else {
     echo "<p class=\"error\">Could not access database.</p>";
 }
